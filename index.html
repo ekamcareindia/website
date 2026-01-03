@@ -28,17 +28,27 @@
             transition: opacity 0.5s ease;
         }
         .loader-mask.hidden { opacity: 0; pointer-events: none; }
-        .loader { display: flex; gap: 8px; }
-        .loader div {
-            width: 12px;
-            height: 12px;
-            background: #dc2626;
+        .logo-loader {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            animation: bounce 0.6s infinite alternate;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #dc2626;
+            animation: spin 1s linear infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
-        .loader div:nth-child(2) { animation-delay: 0.2s; }
-        @keyframes bounce {
-            to { transform: translateY(-15px); }
+        .logo-loader img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* Custom scrollbar */
@@ -262,9 +272,8 @@
 <body class="bg-white text-gray-800">
     <!-- Loader -->
     <div class="loader-mask" id="loader">
-        <div class="loader">
-            <div></div>
-            <div></div>
+        <div class="logo-loader">
+            <img src="Logosmall.png" alt="Ekam Care Logo">
         </div>
     </div>
 
