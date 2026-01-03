@@ -975,8 +975,86 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <span class="inline-block text-red-600 font-semibold uppercase tracking-wider mb-4">Get In Touch</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Ready to Get Your Ekam Care Card?</h2>
+                    <p class="text-gray-600 text-lg mb-8">Fill out the form and our team will get back to you within 24 hours. You can also reach us directly via phone or email.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-phone text-red-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Call Us</p>
+                                <a href="tel:+918087473770" class="text-gray-900 font-semibold text-lg hover:text-red-600 transition">+91 8087473770</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-red-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Email Us</p>
+                                <a href="mailto:ekamcareindia@gmail.com" class="text-gray-900 font-semibold text-lg hover:text-red-600 transition">ekamcareindia@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">WhatsApp</p>
+                                <a href="https://wa.me/918087473770" class="text-gray-900 font-semibold text-lg hover:text-green-600 transition">+91 8087473770</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <form id="requestForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="phoneNumber" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition" placeholder="Your phone">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition" placeholder="Your email">
+                        </div>
+                        <div>
+                            <label for="cardCount" class="block text-gray-700 font-medium mb-2">How many cards do you need?</label>
+                            <select id="cardCount" name="cardCount" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition bg-white">
+                                <option value="1 Card (Personal)">1 Card (Personal)</option>
+                                <option value="2-5 Cards (Family)">2-5 Cards (Family)</option>
+                                <option value="6-20 Cards (Small Group)">6-20 Cards (Small Group)</option>
+                                <option value="20+ Cards (Institution/Corporate)">20+ Cards (Institution/Corporate)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition resize-none" placeholder="Any specific requirements?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-red-600 text-white py-4 rounded-xl font-semibold hover:bg-red-700 transition flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
-    <section class="py-16 lg:py-24 bg-white" data-aos="fade-up">
+    <section class="py-16 lg:py-24 bg-gray-50" data-aos="fade-up">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Frequently Asked Questions</h2>
@@ -1033,193 +1111,19 @@
                         <p class="text-gray-600">Absolutely! Your data is encrypted and stored securely. The QR code only contains the necessary information to contact your emergency contacts in case of an emergency.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Card Preview Section -->
-    <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Choose Your Emergency Card</h2>
-                <p class="text-lg text-gray-600 mb-8">Discover our collection of 9 unique emergency card designs. Each card features QR code technology for instant emergency alerts and comes with customizable information fields.</p>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                <!-- Card Preview -->
-                <div class="flex-1 flex justify-center">
-                    <div class="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 glossy-shine">
-                        <div class="aspect-[3/2] w-80 rounded-xl overflow-hidden">
-                            <img src="22.png" alt="Slim Blue Emergency Card" class="w-full h-full object-cover">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h3 class="text-xl font-bold text-gray-900">Slim Blue Card</h3>
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- Call to Action -->
-                <div class="flex-1 text-center lg:text-left">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to Get Protected?</h3>
-                    <p class="text-gray-600 mb-6">Browse through all available designs and customize your emergency card with your personal information.</p>
-                    <a href="cards.html" class="inline-flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-red-700 transition shadow-lg text-lg">
-                        <i class="fas fa-shopping-cart"></i> Shop Now
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Who Is It For Section -->
-    <section id="who" class="py-16 lg:py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="inline-block text-red-400 font-semibold uppercase tracking-wider mb-4">Perfect For</span>
-                <h2 class="text-3xl lg:text-4xl font-bold">Who Is Ekam Care For</h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Students -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 border border-white/10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-child text-white text-2xl"></i>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-900 flex-1">If my card gets stolen or I misplace it, can I block my card?</h3>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-4">Students & Children</h4>
-                    <p class="text-gray-300">Helps schools and parents ensure safety beyond campus boundaries.</p>
-                </div>
-
-                <!-- Senior Citizens -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 border border-white/10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-person-cane text-white text-2xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">Senior Citizens</h4>
-                    <p class="text-gray-300">Provides quick assistance during medical or travel emergencies.</p>
-                </div>
-
-                <!-- Families -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 border border-white/10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-people-roof text-white text-2xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">Families</h4>
-                    <p class="text-gray-300">Peace of mind during travel, outings, or crowded places.</p>
-                </div>
-
-                <!-- Schools -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 border border-white/10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-school text-white text-2xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">Schools & Institutions</h4>
-                    <p class="text-gray-300">Acts as a secondary emergency safety layer beyond ID cards.</p>
-                </div>
-
-                <!-- Corporates -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 border border-white/10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-building text-white text-2xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">Corporates & Workers</h4>
-                    <p class="text-gray-300">Useful for field staff, night shifts, and remote work environments.</p>
-                </div>
-
-                <!-- Everyone -->
-                <div class="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-8 hover:from-red-600 hover:to-red-700 transition-all duration-300">
-                    <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-heart text-white text-2xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">Everyone You Love</h4>
-                    <p class="text-white/90">Because emergencies don't discriminate — protection for all.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="inline-block text-red-600 font-semibold uppercase tracking-wider mb-4">Transparent Pricing</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Simple & Affordable Plans</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">One-time card purchase with minimal maintenance. No hidden fees.</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Card Issue -->
-                    <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-red-500 hover:shadow-xl transition-all duration-300">
-                        <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                            <i class="fas fa-id-card text-red-600 text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">Ekam Care Card</h4>
-                        <p class="text-gray-500 text-sm mb-6">One Time Issue</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2 text-gray-600">
-                                <i class="fas fa-check text-green-500"></i>
-                                Physical Card
-                            </li>
-                            <li class="flex items-center gap-2 text-gray-600">
-                                <i class="fas fa-check text-green-500"></i>
-                                QR Code Setup
-                            </li>
-                            <li class="flex items-center gap-2 text-gray-600">
-                                <i class="fas fa-check text-green-500"></i>
-                                First Year Support: <strong class="text-green-600">FREE</strong>
-                            </li>
-                        </ul>
-                        <a href="#cards" class="block w-full bg-red-600 text-white text-center py-3 rounded-xl font-semibold hover:bg-red-700 transition">
-                            Get Started
-                        </a>
-                    </div>
-
-                    <!-- Info Update -->
-                    <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-red-500 hover:shadow-xl transition-all duration-300">
-                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                            <i class="fas fa-pen-to-square text-blue-600 text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">Information Update</h4>
-                        <p class="text-gray-500 text-sm mb-6">Contact / Info Change</p>
-                        <div class="mb-8">
-                            <div class="text-4xl font-bold text-gray-900 mb-2">₹49<span class="text-lg text-gray-500 font-normal">/update</span></div>
-                            <p class="text-gray-500 text-sm">Change emergency contacts or personal info anytime</p>
-                        </div>
-                        <a href="#contact" class="block w-full bg-gray-100 text-gray-700 text-center py-3 rounded-xl font-semibold hover:bg-gray-200 transition">
-                            Learn More
-                        </a>
-                    </div>
-
-                    <!-- Annual Maintenance -->
-                    <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl p-8 text-white relative overflow-hidden">
-                        <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
-                            FROM YEAR 2
-                        </div>
-                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                            <i class="fas fa-calendar-check text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Annual Maintenance</h4>
-                        <p class="text-red-200 text-sm mb-6">Yearly Renewal</p>
-                        <div class="mb-8">
-                            <div class="text-4xl font-bold mb-2">₹149<span class="text-lg text-red-200 font-normal">/year</span></div>
-                            <p class="text-red-200 text-sm">Keep your card active and supported</p>
-                        </div>
-                        <a href="#cards" class="block w-full bg-white text-red-600 text-center py-3 rounded-xl font-semibold hover:bg-gray-100 transition">
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Trust Badge -->
-                <div class="mt-12 text-center">
-                    <div class="inline-flex items-center gap-3 bg-blue-50 border border-blue-200 px-6 py-3 rounded-full">
-                        <i class="fas fa-shield-check text-blue-600 text-xl"></i>
-                        <span class="text-blue-800 font-medium">100% Transparent Pricing • No Hidden Fees</span>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">Yes, we can block the card and it will be free of cost as safety is our priority and it goes hand in hand with privacy.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
     <section id="contact" class="py-16 lg:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12">
