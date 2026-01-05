@@ -553,6 +553,67 @@
             .mobile-text-2xl { font-size: 1.25rem; }
             .mobile-px { padding-left: 0.75rem; padding-right: 0.75rem; }
         }
+        
+        /* Review Section Styles */
+        .review-section {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 0.5rem;
+        }
+        
+        .review-count {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .add-review-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .add-review-btn:hover {
+            background: #218838;
+        }
+        
+        .rating-input {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .rating-stars {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .rating-star {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .rating-star:hover,
+        .rating-star.active {
+            color: #ffc107;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 transition-colors duration-300">
@@ -970,6 +1031,18 @@
                         </div>
                         <div class="text-center mt-4">
                             <h3 class="text-xl font-bold text-gray-900">Slim Blue Card</h3>
+                        </div>
+                        <!-- Review Section -->
+                        <div class="review-section text-center">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-700 font-semibold ml-2">5.0</span>
+                            </div>
+                            <div class="review-count">(29 reviews)</div>
                         </div>
                     </div>
                 </div>
@@ -1390,6 +1463,65 @@
         counters.forEach(counter => counterObserver.observe(counter));
         
         // Existing code continues...
+        
+        // Review System Functions
+        function toggleReviewInput(button) {
+            const reviewInput = button.nextElementSibling;
+            reviewInput.style.display = reviewInput.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        // Rating star interaction
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('rating-star')) {
+                const stars = e.target.parentElement.querySelectorAll('.rating-star');
+                const rating = parseInt(e.target.dataset.rating);
+                
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            }
+        });
+        
+        function submitReview(button) {
+            const reviewSection = button.closest('.rating-input');
+            const rating = reviewSection.querySelectorAll('.rating-star.active').length;
+            const reviewText = reviewSection.querySelector('textarea').value;
+            
+            if (rating === 0) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Rating Required',
+                    text: 'Please select a star rating before submitting.',
+                    confirmButtonColor: '#dc2626'
+                });
+                return;
+            }
+            
+            if (!reviewText.trim()) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Review Required',
+                    text: 'Please write a review before submitting.',
+                    confirmButtonColor: '#dc2626'
+                });
+                return;
+            }
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Review Submitted!',
+                text: 'Thank you for your review. It will be displayed after moderation.',
+                confirmButtonColor: '#28a745'
+            }).then(() => {
+                reviewSection.style.display = 'none';
+                reviewSection.querySelector('textarea').value = '';
+                reviewSection.querySelectorAll('.rating-star').forEach(star => star.classList.remove('active'));
+            });
+        }
         // Loader
         window.addEventListener('load', () => {
             setTimeout(() => {
