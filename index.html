@@ -1061,13 +1061,31 @@
                     </button>
                 </div>
                 
-                <!-- Center Call to Action -->
-                <div class="text-center">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to Get Protected?</h3>
-                    <p class="text-gray-600 mb-6">Browse through all available designs and customize your emergency card with your personal information.</p>
-                    <a href="#cards" class="inline-flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-red-700 transition shadow-lg text-lg">
-                        <i class="fas fa-shopping-cart"></i> Shop Now
-                    </a>
+                <!-- Center Kids Card Preview -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="showKidsCards()">
+                        <div class="aspect-[3/2] w-80 rounded-xl overflow-hidden">
+                            <img src="k1.png" alt="Fun Yellow Kids Card" class="w-full h-full object-cover lazy" loading="lazy">
+                        </div>
+                        <div class="text-center mt-4">
+                            <h3 class="text-xl font-bold text-gray-900">Fun Yellow Kids Card</h3>
+                        </div>
+                        <!-- Review Section -->
+                        <div class="review-section text-center">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-700 font-semibold ml-2">4.9</span>
+                            </div>
+                            <div class="review-count">(22 reviews)</div>
+                        </div>
+                    </div>
+                    <button onclick="showKidsCards()" class="mt-4 bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition flex items-center gap-2">
+                        <i class="fas fa-shopping-cart"></i> Shop Kids Cards
+                    </button>
                 </div>
                 
                 <!-- Right Card Preview -->
@@ -1546,6 +1564,102 @@
                                     <span class="text-gray-700 font-semibold ml-2">4.8</span>
                                 </div>
                                 <div class="review-count">(26 reviews)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kids Cards Collection -->
+            <div id="kidsCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style="display: none;">
+                <!-- Fun Yellow Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="k1.png" alt="Fun Yellow Kids Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Fun Yellow Card</h3>
+                        <p class="text-gray-600 mb-4">Bright yellow design perfect for kids with fun giraffe</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">₹299</span>
+                            <span class="text-sm text-gray-500">₹ 0.81/ per day</span>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition select-card-btn" onclick="selectCard('fun-yellow', 'Fun Yellow Card')">
+                            Select This Card
+                        </button>
+                        <div class="review-section">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-700 font-semibold ml-2">4.9</span>
+                                </div>
+                                <div class="review-count">(22 reviews)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minty Green Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="k2.png" alt="Minty Green Kids Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Minty Green Card</h3>
+                        <p class="text-gray-600 mb-4">Fresh green design with friendly crocodile character</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">₹299</span>
+                            <span class="text-sm text-gray-500">₹ 0.81/ per day</span>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition select-card-btn" onclick="selectCard('minty-green', 'Minty Green Card')">
+                            Select This Card
+                        </button>
+                        <div class="review-section">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-700 font-semibold ml-2">4.8</span>
+                                </div>
+                                <div class="review-count">(19 reviews)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FROZEN Blue Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="k3.png" alt="FROZEN Blue Kids Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">FROZEN Blue Card</h3>
+                        <p class="text-gray-600 mb-4">Cool blue design with adorable whale character</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">₹299</span>
+                            <span class="text-sm text-gray-500">₹ 0.81/ per day</span>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition select-card-btn" onclick="selectCard('frozen-blue', 'FROZEN Blue Card')">
+                            Select This Card
+                        </button>
+                        <div class="review-section">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-700 font-semibold ml-2">5.0</span>
+                                </div>
+                                <div class="review-count">(25 reviews)</div>
                             </div>
                         </div>
                     </div>
@@ -2223,6 +2337,7 @@
         function showStandardCards() {
             document.getElementById('standardCards').style.display = 'grid';
             document.getElementById('premiumCards').style.display = 'none';
+            document.getElementById('kidsCards').style.display = 'none';
             document.getElementById('cards').scrollIntoView({ behavior: 'smooth' });
         }
         
@@ -2230,6 +2345,15 @@
         function showPremiumCards() {
             document.getElementById('standardCards').style.display = 'none';
             document.getElementById('premiumCards').style.display = 'grid';
+            document.getElementById('kidsCards').style.display = 'none';
+            document.getElementById('cards').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Show kids cards collection
+        function showKidsCards() {
+            document.getElementById('standardCards').style.display = 'none';
+            document.getElementById('premiumCards').style.display = 'none';
+            document.getElementById('kidsCards').style.display = 'grid';
             document.getElementById('cards').scrollIntoView({ behavior: 'smooth' });
         }
 
