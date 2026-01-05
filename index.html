@@ -1026,15 +1026,17 @@
     <!-- Quick Card Preview Section -->
     <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Centered Header -->
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Choose Your Emergency Card</h2>
                 <p class="text-lg text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="100">Discover our collection of 9 unique emergency card designs. Each card features QR code technology for instant emergency alerts and comes with customizable information fields.</p>
             </div>
             
-            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12" data-aos="fade-up" data-aos-delay="200">
-                <!-- Card Preview -->
-                <div class="flex-1 flex justify-center">
-                    <div class="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 glossy-shine">
+            <!-- Three Column Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center" data-aos="fade-up" data-aos-delay="200">
+                <!-- Left Card Preview -->
+                <div class="flex justify-center">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="showStandardCards()">
                         <div class="aspect-[3/2] w-80 rounded-xl overflow-hidden">
                             <img src="22.png" alt="Slim Blue Emergency Card" class="w-full h-full object-cover lazy" loading="lazy">
                         </div>
@@ -1056,13 +1058,37 @@
                     </div>
                 </div>
                 
-                <!-- Call to Action -->
-                <div class="flex-1 text-center lg:text-left">
+                <!-- Center Call to Action -->
+                <div class="text-center">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to Get Protected?</h3>
                     <p class="text-gray-600 mb-6">Browse through all available designs and customize your emergency card with your personal information.</p>
-                    <a href="#cards" class="inline-flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-red-700 transition shadow-lg text-lg ripple">
+                    <a href="#cards" class="inline-flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-red-700 transition shadow-lg text-lg">
                         <i class="fas fa-shopping-cart"></i> Shop Now
                     </a>
+                </div>
+                
+                <!-- Right Card Preview -->
+                <div class="flex justify-center">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="showPremiumCards()">
+                        <div class="aspect-[3/2] w-80 rounded-xl overflow-hidden">
+                            <img src="d3.png" alt="Premium Purple Emergency Card" class="w-full h-full object-cover lazy" loading="lazy">
+                        </div>
+                        <div class="text-center mt-4">
+                            <h3 class="text-xl font-bold text-gray-900">Premium Purple Card</h3>
+                        </div>
+                        <!-- Review Section -->
+                        <div class="review-section text-center">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-700 font-semibold ml-2">4.9</span>
+                            </div>
+                            <div class="review-count">(34 reviews)</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1080,7 +1106,8 @@
                 </div>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Standard Cards Collection -->
+            <div id="standardCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Blossom Pink Card -->
                 <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group glossy-shine">
                     <div class="aspect-[3/2] overflow-hidden">
@@ -1355,6 +1382,164 @@
                                     <span class="text-gray-700 font-semibold ml-2">4.9</span>
                                 </div>
                                 <div class="review-count">(48 reviews)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Premium Cards Collection -->
+            <div id="premiumCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style="display: none;">
+                <!-- Creative Blue Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="d1.png" alt="Creative Blue Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Creative Blue Card</h3>
+                        <p class="text-gray-600 mb-4">Artistic blue design with creative patterns</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">₹299</span>
+                            <span class="text-sm text-gray-500">₹ 0.81/ per day</span>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition select-card-btn" onclick="selectCard('creative-blue', 'Creative Blue Card')">
+                            Select This Card
+                        </button>
+                        <div class="review-section">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-700 font-semibold ml-2">4.8</span>
+                                </div>
+                                <div class="review-count">(31 reviews)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ocean Green Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="d2.png" alt="Ocean Green Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Ocean Green Card</h3>
+                        <p class="text-gray-600 mb-4">Refreshing ocean green with natural vibes</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">₹299</span>
+                            <span class="text-sm text-gray-500">₹ 0.81/ per day</span>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition select-card-btn" onclick="selectCard('ocean-green', 'Ocean Green Card')">
+                            Select This Card
+                        </button>
+                        <div class="review-section">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-700 font-semibold ml-2">4.9</span>
+                                </div>
+                                <div class="review-count">(28 reviews)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep India Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="d3.png" alt="Deep India Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Deep India Card</h3>
+                        <p class="text-gray-600 mb-4">Rich purple design inspired by Indian heritage</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">₹299</span>
+                            <span class="text-sm text-gray-500">₹ 0.81/ per day</span>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition select-card-btn" onclick="selectCard('deep-india', 'Deep India Card')">
+                            Select This Card
+                        </button>
+                        <div class="review-section">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-700 font-semibold ml-2">5.0</span>
+                                </div>
+                                <div class="review-count">(42 reviews)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gold Era Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="d4.png" alt="Gold Era Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Gold Era Card</h3>
+                        <p class="text-gray-600 mb-4">Luxurious golden design for premium appeal</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">₹299</span>
+                            <span class="text-sm text-gray-500">₹ 0.81/ per day</span>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition select-card-btn" onclick="selectCard('gold-era', 'Gold Era Card')">
+                            Select This Card
+                        </button>
+                        <div class="review-section">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-700 font-semibold ml-2">4.7</span>
+                                </div>
+                                <div class="review-count">(35 reviews)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sensitive Pink Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="d5.png" alt="Sensitive Pink Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Sensitive Pink Card</h3>
+                        <p class="text-gray-600 mb-4">Gentle pink design with elegant aesthetics</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">₹299</span>
+                            <span class="text-sm text-gray-500">₹ 0.81/ per day</span>
+                        </div>
+                        <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition select-card-btn" onclick="selectCard('sensitive-pink', 'Sensitive Pink Card')">
+                            Select This Card
+                        </button>
+                        <div class="review-section">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-700 font-semibold ml-2">4.8</span>
+                                </div>
+                                <div class="review-count">(26 reviews)</div>
                             </div>
                         </div>
                     </div>
@@ -2026,6 +2211,20 @@
             document.getElementById('selectedCard').value = cardType;
             document.getElementById('selectedCardName').textContent = cardName;
             document.getElementById('customizationModal').classList.remove('hidden');
+        }
+        
+        // Show standard cards collection
+        function showStandardCards() {
+            document.getElementById('standardCards').style.display = 'grid';
+            document.getElementById('premiumCards').style.display = 'none';
+            document.getElementById('cards').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Show premium cards collection
+        function showPremiumCards() {
+            document.getElementById('standardCards').style.display = 'none';
+            document.getElementById('premiumCards').style.display = 'grid';
+            document.getElementById('cards').scrollIntoView({ behavior: 'smooth' });
         }
 
         function closeModal() {
