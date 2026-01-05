@@ -2192,19 +2192,26 @@
                 showKidsCards();
             }
             
-            // Scroll to cards section and highlight the specific card
+            // Wait for collection to load, then find and highlight the card
             setTimeout(() => {
                 const cardElement = document.querySelector(`[onclick*="${cardId}"]`);
                 if (cardElement) {
-                    cardElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Scroll to the card with offset to prevent bouncing
+                    const cardPosition = cardElement.offsetTop - 100;
+                    window.scrollTo({ top: cardPosition, behavior: 'smooth' });
+                    
+                    // Highlight the card
+                    cardElement.style.transition = 'all 0.3s ease';
                     cardElement.style.transform = 'scale(1.05)';
                     cardElement.style.boxShadow = '0 20px 40px rgba(220, 38, 38, 0.3)';
+                    
+                    // Remove highlight after 2 seconds
                     setTimeout(() => {
                         cardElement.style.transform = '';
                         cardElement.style.boxShadow = '';
                     }, 2000);
                 }
-            }, 500);
+            }, 300);
         }
         
         // Function to populate recommended cards
