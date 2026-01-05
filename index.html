@@ -939,6 +939,21 @@
             </div>
         </div>
     </section>
+    
+    <!-- Recommended for You Section -->
+    <section class="py-16 lg:py-20 bg-white" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block text-red-600 font-semibold uppercase tracking-wider mb-4">Personalized Selection</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Recommended for You</h2>
+                <p class="text-lg text-gray-600">Handpicked cards based on popular choices</p>
+            </div>
+            
+            <div id="recommendedCards" class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
     <!-- Comparison Section -->
     <section id="comparison" class="py-16 lg:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2132,6 +2147,89 @@
             once: true,
             offset: 100
         });
+        
+        // All available cards data
+        const allCards = [
+            // Standard Cards
+            { id: 'blossom-pink', name: 'Blossom Pink Card', image: '5.png', collection: 'standard' },
+            { id: 'star-black', name: 'Star Black Card', image: '7.png', collection: 'standard' },
+            { id: 'amazon-red', name: 'Amazon Red Card', image: '2.png', collection: 'standard' },
+            { id: 'aqua-blue', name: 'Aqua Blue Card', image: '1.png', collection: 'standard' },
+            { id: 'slim-blue', name: 'Slim Blue Card', image: '22.png', collection: 'standard' },
+            { id: 'spicy-purple', name: 'Spicy Purple Card', image: '33.png', collection: 'standard' },
+            { id: 'universal-light', name: 'Universal Light Card', image: '44.png', collection: 'standard' },
+            { id: 'deep-mango', name: 'Deep Mango Card', image: '55.png', collection: 'standard' },
+            { id: 'steel-silver', name: 'Steel Silver Card', image: '66.png', collection: 'standard' },
+            // Premium Cards
+            { id: 'creative-blue', name: 'Creative Blue Card', image: 'd1.png', collection: 'premium' },
+            { id: 'ocean-green', name: 'Ocean Green Card', image: 'd2.png', collection: 'premium' },
+            { id: 'deep-india', name: 'Deep India Card', image: 'd3.png', collection: 'premium' },
+            { id: 'gold-era', name: 'Gold Era Card', image: 'd4.png', collection: 'premium' },
+            { id: 'sensitive-pink', name: 'Sensitive Pink Card', image: 'd5.png', collection: 'premium' },
+            { id: 'winter-sky', name: 'Winter Sky Card', image: 'd6.png', collection: 'premium' },
+            // Kids Cards
+            { id: 'fun-yellow', name: 'Fun Yellow Card', image: 'k1.png', collection: 'kids' },
+            { id: 'minty-green', name: 'Minty Green Card', image: 'k2.png', collection: 'kids' },
+            { id: 'frozen-blue', name: 'FROZEN Blue Card', image: 'k3.png', collection: 'kids' },
+            { id: 'coco-panda', name: 'Coco Panda Card', image: 'k4.png', collection: 'kids' },
+            { id: 'candy-bunny', name: 'Candy Bunny Card', image: 'k5.png', collection: 'kids' }
+        ];
+        
+        // Function to get 3 random cards
+        function getRandomCards() {
+            const shuffled = [...allCards].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, 3);
+        }
+        
+        // Function to navigate to specific card
+        function goToCard(cardId, collection) {
+            // Show the appropriate collection
+            if (collection === 'standard') {
+                showStandardCards();
+            } else if (collection === 'premium') {
+                showPremiumCards();
+            } else if (collection === 'kids') {
+                showKidsCards();
+            }
+            
+            // Scroll to cards section and highlight the specific card
+            setTimeout(() => {
+                const cardElement = document.querySelector(`[onclick*="${cardId}"]`);
+                if (cardElement) {
+                    cardElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    cardElement.style.transform = 'scale(1.05)';
+                    cardElement.style.boxShadow = '0 20px 40px rgba(220, 38, 38, 0.3)';
+                    setTimeout(() => {
+                        cardElement.style.transform = '';
+                        cardElement.style.boxShadow = '';
+                    }, 2000);
+                }
+            }, 500);
+        }
+        
+        // Function to populate recommended cards
+        function populateRecommendedCards() {
+            const container = document.getElementById('recommendedCards');
+            const randomCards = getRandomCards();
+            
+            container.innerHTML = randomCards.map(card => `
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:scale-105" onclick="goToCard('${card.id}', '${card.collection}')">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        <img src="${card.image}" alt="${card.name}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">${card.name}</h3>
+                        <div class="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-star"></i>
+                            <span>Recommended</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Populate recommended cards on page load
+        populateRecommendedCards();
         
         // Initialize Particles.js
         particlesJS('particles-js', {
