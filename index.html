@@ -2183,24 +2183,16 @@
         
         // Function to navigate to specific card
         function goToCard(cardId, collection) {
-            // Show the appropriate collection
-            if (collection === 'standard') {
-                showStandardCards();
-            } else if (collection === 'premium') {
-                showPremiumCards();
-            } else if (collection === 'kids') {
-                showKidsCards();
-            }
+            // Show the appropriate collection without scrolling
+            document.getElementById('standardCards').style.display = collection === 'standard' ? 'grid' : 'none';
+            document.getElementById('premiumCards').style.display = collection === 'premium' ? 'grid' : 'none';
+            document.getElementById('kidsCards').style.display = collection === 'kids' ? 'grid' : 'none';
             
-            // Wait for collection to load, then find and highlight the card
+            // Wait for collection to load, then highlight the card
             setTimeout(() => {
                 const cardElement = document.querySelector(`[onclick*="${cardId}"]`);
                 if (cardElement) {
-                    // Scroll to the card with offset to prevent bouncing
-                    const cardPosition = cardElement.offsetTop - 100;
-                    window.scrollTo({ top: cardPosition, behavior: 'smooth' });
-                    
-                    // Highlight the card
+                    // Just highlight the card without scrolling
                     cardElement.style.transition = 'all 0.3s ease';
                     cardElement.style.transform = 'scale(1.05)';
                     cardElement.style.boxShadow = '0 20px 40px rgba(220, 38, 38, 0.3)';
@@ -2211,7 +2203,7 @@
                         cardElement.style.boxShadow = '';
                     }, 2000);
                 }
-            }, 300);
+            }, 100);
         }
         
         // Function to populate recommended cards
