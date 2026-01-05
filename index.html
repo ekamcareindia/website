@@ -1035,7 +1035,7 @@
             <!-- Three Column Layout -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center" data-aos="fade-up" data-aos-delay="200">
                 <!-- Left Card Preview -->
-                <div class="flex justify-center">
+                <div class="flex flex-col items-center">
                     <div class="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="showStandardCards()">
                         <div class="aspect-[3/2] w-80 rounded-xl overflow-hidden">
                             <img src="22.png" alt="Slim Blue Emergency Card" class="w-full h-full object-cover lazy" loading="lazy">
@@ -1056,6 +1056,9 @@
                             <div class="review-count">(29 reviews)</div>
                         </div>
                     </div>
+                    <button onclick="showStandardCards()" class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition flex items-center gap-2">
+                        <i class="fas fa-shopping-cart"></i> Shop Standard Cards
+                    </button>
                 </div>
                 
                 <!-- Center Call to Action -->
@@ -1068,7 +1071,7 @@
                 </div>
                 
                 <!-- Right Card Preview -->
-                <div class="flex justify-center">
+                <div class="flex flex-col items-center">
                     <div class="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="showPremiumCards()">
                         <div class="aspect-[3/2] w-80 rounded-xl overflow-hidden">
                             <img src="d3.png" alt="Premium Purple Emergency Card" class="w-full h-full object-cover lazy" loading="lazy">
@@ -1089,6 +1092,9 @@
                             <div class="review-count">(34 reviews)</div>
                         </div>
                     </div>
+                    <button onclick="showPremiumCards()" class="mt-4 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition flex items-center gap-2">
+                        <i class="fas fa-shopping-cart"></i> Shop Premium Cards
+                    </button>
                 </div>
             </div>
         </div>
